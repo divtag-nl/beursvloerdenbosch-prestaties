@@ -8,7 +8,7 @@ document.querySelector('#app').innerHTML = `
     <div class="relative z-10 bg-white/80 p-16 rounded-2xl shadow-xl text-center">
       <img src="${logoImg}" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
       <div class="flex flex-wrap justify-center gap-12 mb-16">
-        <div class="w-[725px] max-w-full">
+        <div class="w-[350px] max-w-full">
           <div class="text-4xl font-semibold text-gray-600 mb-4">Aantal matches</div>
           <div id="matches" class="text-9xl font-bold text-[#f19848] tabular-nums">0</div>
         </div>
