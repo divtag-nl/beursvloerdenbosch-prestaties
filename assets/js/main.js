@@ -30,11 +30,11 @@ document.querySelector('#app').innerHTML = `
       <div class="space-y-4">
         <div>
           <label class="block text-sm font-medium mb-1">Aantal matches</label>
-          <input type="number" id="input-matches" value="200" class="w-full px-3 py-2 border rounded">
+          <input type="number" id="input-matches" value="453" class="w-full px-3 py-2 border rounded">
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Maatschappelijke waarde (€)</label>
-          <input type="number" id="input-value" value="200000" class="w-full px-3 py-2 border rounded">
+          <input type="number" id="input-value" value="245368" class="w-full px-3 py-2 border rounded">
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Duur animatie 'Aantal matches' (ms)</label>
@@ -53,8 +53,8 @@ document.querySelector('#app').innerHTML = `
   </div>
 `;
 
-let matches = 200;
-let value = 200000;
+let matches = 453;
+let value = 245368;
 let animationDuration = 5000;
 let animationDurationValue = 7000;
 let confettiInterval = null;
@@ -70,7 +70,6 @@ const cancelSettingsBtn = document.querySelector('#cancel-settings');
 
 startButton.addEventListener('click', () => {
   animateNumbers();
-  startConfetti();
 });
 
 reloadBtn.addEventListener('click', () => {
@@ -194,6 +193,9 @@ function animateNumbers() {
         matchesDiv.parentElement.classList.remove('animating');
         valueDiv.parentElement.classList.remove('animating');
       }, 400);
+      
+      // Start confetti after animations complete
+      startConfetti();
     }
   }
   
@@ -206,14 +208,14 @@ function startConfetti() {
     clearInterval(confettiInterval);
   }
 
-  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, scalar: 1.5 };
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  // Fireworks phase - use the longer duration
-  const longerDuration = Math.max(animationDuration, animationDurationValue);
+  // Fireworks phase - 5 seconds
+  const fireworksDuration = 5000;
   
   confettiInterval = setInterval(function() {
     const particleCount = 50;
@@ -232,7 +234,7 @@ function startConfetti() {
     );
   }, 500);
 
-  // Start falling confetti earlier for smooth transition
+  // Transition to falling confetti after fireworks
   setTimeout(() => {
     clearInterval(confettiInterval);
     
@@ -254,11 +256,11 @@ function startConfetti() {
           colors: [colors[Math.floor(Math.random() * colors.length)]],
           shapes: ['square', 'circle'],
           gravity: randomInRange(0.4, 0.6),
-          scalar: randomInRange(0.8, 1.4),
+          scalar: randomInRange(1.5, 2.5),
           drift: randomInRange(-0.4, 0.4),
           zIndex: 0
         });
       }
     }, 50);
-  }, longerDuration);
+  }, fireworksDuration);
 }
