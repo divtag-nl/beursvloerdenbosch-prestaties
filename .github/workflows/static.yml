@@ -27,7 +27,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fix asset paths
-        run: sed -i 's|"/assets/|"/beursvloerdenbosch-prestaties/assets/|g' dist/index.html
+        run: |
+          sed -i 's|"/assets/|"/beursvloerdenbosch-prestaties/assets/|g' dist/index.html
+          sed -i 's|"/assets/|"/beursvloerdenbosch-prestaties/assets/|g' dist/assets/*.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
