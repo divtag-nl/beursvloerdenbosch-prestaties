@@ -209,7 +209,7 @@ function startConfetti() {
     clearInterval(confettiInterval);
   }
 
-  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, scalar: 1.5 };
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, scalar: 1.75 };
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
@@ -257,7 +257,7 @@ function startConfetti() {
           colors: [colors[Math.floor(Math.random() * colors.length)]],
           shapes: ['square', 'circle'],
           gravity: randomInRange(0.4, 0.6),
-          scalar: randomInRange(1.5, 2.5),
+          scalar: randomInRange(1.5, 2),
           drift: randomInRange(-0.4, 0.4),
           zIndex: 0
         });
