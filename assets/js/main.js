@@ -4,7 +4,7 @@ import confetti from 'canvas-confetti';
 import logoImg from '../img/beursvloer-logo.png';
 
 document.querySelector('#app').innerHTML = `
-  <div class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-orange-50 to-teal-50">
+  <div class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-orange-100 to-teal-100">
     <div class="relative z-10 bg-white/80 p-16 rounded-2xl shadow-xl text-center">
       <img src="${logoImg}" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
       <div class="flex flex-wrap justify-center gap-12 mb-16">
@@ -22,8 +22,8 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
   
-  <button id="reload-btn" class="fixed bottom-4 right-18 flex items-center justify-center w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Reset"><iconify-icon icon="lucide:refresh-ccw"></iconify-icon></button>
-  <button id="settings-btn" class="fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Instellingen"><iconify-icon icon="lucide:settings"></iconify-icon></button>
+  <button id="reload-btn" class="fixed bottom-4 right-18 flex items-center justify-center w-12 h-12 bg-gray-300 rounded-full text-gray-700 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Reset"><iconify-icon icon="lucide:refresh-ccw"></iconify-icon></button>
+  <button id="settings-btn" class="fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 bg-gray-300 rounded-full text-gray-700 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Instellingen"><iconify-icon icon="lucide:settings"></iconify-icon></button>
 
   <div id="settings-dialog" class="hidden fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
