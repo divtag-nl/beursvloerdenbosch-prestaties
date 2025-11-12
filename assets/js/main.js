@@ -1,4 +1,5 @@
 import '../css/style.css'
+import 'iconify-icon';
 import confetti from 'canvas-confetti';
 import logoImg from '../img/beursvloer-logo.png';
 
@@ -21,8 +22,8 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
   
-  <button id="reload-btn" class="fixed bottom-4 right-18 w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Reset">↻</button>
-  <button id="settings-btn" class="fixed bottom-4 right-4 w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Instellingen">🔧</button>
+  <button id="reload-btn" class="fixed bottom-4 right-18 flex items-center justify-center w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Reset"><iconify-icon icon="lucide:refresh-ccw"></iconify-icon></button>
+  <button id="settings-btn" class="fixed bottom-4 right-4 flex items-center justify-center w-12 h-12 bg-gray-300 hover:bg-gray-400 rounded-full text-gray-600 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Instellingen"><iconify-icon icon="lucide:settings"></iconify-icon></button>
 
   <div id="settings-dialog" class="hidden fixed inset-0 bg-black/80 bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
@@ -46,8 +47,8 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       <div class="flex gap-2 mt-6">
-        <button id="save-settings" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Opslaan</button>
-        <button id="cancel-settings" class="flex-1 bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded">Annuleren</button>
+        <button id="save-settings" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">Opslaan</button>
+        <button id="cancel-settings" class="flex-1 bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded cursor-pointer">Annuleren</button>
       </div>
     </div>
   </div>
