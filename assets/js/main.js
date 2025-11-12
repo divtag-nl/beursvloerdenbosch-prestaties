@@ -1,10 +1,11 @@
 import '../css/style.css'
 import confetti from 'canvas-confetti';
+import logoImg from '../img/beursvloer-logo.png';
 
 document.querySelector('#app').innerHTML = `
   <div class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-orange-50 to-teal-50">
     <div class="relative z-10 bg-white/80 p-16 rounded-2xl shadow-xl text-center">
-      <img src="/assets/img/beursvloer-logo.png" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
+      <img src="${logoImg}" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
       <div class="flex flex-wrap justify-center gap-12 mb-16">
         <div class="w-[725px] max-w-full">
           <div class="text-4xl font-semibold text-gray-600 mb-4">Aantal matches</div>
