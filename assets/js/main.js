@@ -67,6 +67,30 @@ let animationDuration = 5000;
 let animationDurationValue = 7000;
 let confettiInterval = null;
 
+// Load values from session storage on initialization
+function loadSettings() {
+  const savedMatches = sessionStorage.getItem('matches');
+  const savedValue = sessionStorage.getItem('value');
+  const savedDuration = sessionStorage.getItem('animationDuration');
+  const savedDurationValue = sessionStorage.getItem('animationDurationValue');
+  
+  if (savedMatches !== null) matches = parseInt(savedMatches);
+  if (savedValue !== null) value = parseInt(savedValue);
+  if (savedDuration !== null) animationDuration = parseInt(savedDuration);
+  if (savedDurationValue !== null) animationDurationValue = parseInt(savedDurationValue);
+}
+
+// Save values to session storage
+function saveSettings() {
+  sessionStorage.setItem('matches', matches);
+  sessionStorage.setItem('value', value);
+  sessionStorage.setItem('animationDuration', animationDuration);
+  sessionStorage.setItem('animationDurationValue', animationDurationValue);
+}
+
+// Load settings on page load
+loadSettings();
+
 const startButton = document.querySelector('button');
 const matchesDiv = document.querySelector('#matches');
 const valueDiv = document.querySelector('#value');
@@ -81,6 +105,7 @@ startButton.addEventListener('click', () => {
 });
 
 reloadBtn.addEventListener('click', () => {
+  // sessionStorage.clear();
   window.location.reload();
 });
 
@@ -97,6 +122,10 @@ saveSettingsBtn.addEventListener('click', () => {
   value = parseInt(document.querySelector('#input-value').value);
   animationDuration = parseInt(document.querySelector('#input-duration-matches').value) || 5000;
   animationDurationValue = parseInt(document.querySelector('#input-duration-value').value) || 7000;
+  
+  // Save to session storage
+  saveSettings();
+  
   settingsDialog.classList.add('hidden');
 });
 
