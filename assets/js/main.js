@@ -1,12 +1,13 @@
 import '../css/style.css'
 import 'iconify-icon';
 import confetti from 'canvas-confetti';
-import logoImg from '../img/beursvloer-logo.png';
+import beursvloerLogoImg from '../img/beursvloer-logo.png';
+import divtagLogoImg from '../img/divtag-logo.svg';
 
 document.querySelector('#app').innerHTML = `
   <div class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-orange-100 to-teal-100">
     <div class="relative z-10 bg-white/80 p-16 rounded-2xl shadow-xl text-center">
-      <img src="${logoImg}" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
+      <img src="${beursvloerLogoImg}" alt="Beursvloer Logo" class="mx-auto mb-12 max-w-md w-full">
       <div class="flex flex-wrap justify-center gap-12 mb-16">
         <div class="w-[350px] max-w-full">
           <div class="text-4xl font-semibold text-gray-600 mb-4">Aantal matches</div>
@@ -20,6 +21,12 @@ document.querySelector('#app').innerHTML = `
 
       <button class="bg-[#b3a1cb] hover:bg-[#9682b1] text-white text-4xl font-bold py-6 px-16 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 cursor-pointer">START</button>
     </div>
+  </div>
+
+  <div class="fixed bottom-4 left-4 flex items-center gap-2 text-gray-400">
+    <span>Gemaakt door</span>
+    <img src="${divtagLogoImg}" alt="Divtag logo" class="w-4">
+    <a href="https://divtag.nl" target="_blank" rel="noopener noreferrer" class="hover:underline">divtag.nl</a>
   </div>
   
   <button id="reload-btn" class="fixed bottom-4 right-18 flex items-center justify-center w-12 h-12 bg-gray-300 rounded-full text-gray-700 text-xl cursor-pointer opacity-50 hover:opacity-100 transition-opacity" title="Reset"><iconify-icon icon="lucide:refresh-ccw"></iconify-icon></button>
